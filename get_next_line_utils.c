@@ -6,7 +6,7 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:34 by mkotan            #+#    #+#             */
-/*   Updated: 2026/03/07 00:05:04 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/04 14:50:05 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -44,11 +45,11 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	j;
 	char	*new_str;
-	size_t	i;
+	char	*start;
 
 	if (!s2)
 		return (NULL);
@@ -62,21 +63,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!new_str)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		new_str[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j] != '\0')
-	{
-		new_str[i + j] = s2[j];
-		j++;
-	}
-	new_str[i + j] = '\0';
+	start = new_str;
+	while (*s1)
+		*new_str++ = *s1++;
+	while (*s2)
+		*new_str++ = *s2++;
+	*new_str = '\0';
 	free((void *)s1);
-	return (new_str);
+	return (start);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -100,6 +94,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	res[i] = '\0';
 	return (res);
 }
+
 char	*ft_strdup(const char *s)
 {
 	int		i;
