@@ -6,7 +6,7 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:34 by mkotan            #+#    #+#             */
-/*   Updated: 2026/04/04 14:50:05 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/13 14:57:45 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,29 @@ char	*ft_strchr(const char *s, int c)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*new_str;
-	char	*start;
+	char		*new_str;
+	char		*start;
+	const char	*s1_orig;      // orijinal adresi sakla
 
 	if (!s2)
 		return (NULL);
 	if (!s1)
 	{
-		s1 = malloc(1);
+		s1 = ft_strdup("");
 		if (!s1)
 			return (NULL);
-		((char *)s1)[0] = '\0';
 	}
+	s1_orig = s1;
 	new_str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!new_str)
-		return (NULL);
+		return (free((void *)s1_orig), NULL);
 	start = new_str;
 	while (*s1)
 		*new_str++ = *s1++;
 	while (*s2)
 		*new_str++ = *s2++;
 	*new_str = '\0';
-	free((void *)s1);
+	free((void *)s1_orig);
 	return (start);
 }
 
