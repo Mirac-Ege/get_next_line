@@ -6,7 +6,7 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:34 by mkotan            #+#    #+#             */
-/*   Updated: 2026/04/13 14:57:45 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/21 19:29:24 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char		*new_str;
 	char		*start;
-	const char	*s1_orig;      // orijinal adresi sakla
+	const char	*s1_orig;
 
 	if (!s2)
 		return (NULL);
