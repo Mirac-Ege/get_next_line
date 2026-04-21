@@ -6,7 +6,7 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:21 by mkotan            #+#    #+#             */
-/*   Updated: 2026/04/04 14:30:41 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/21 19:20:16 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ static char	*read_to_stash(int fd, char *stash)
 	{
 		n = read(fd, buf, BUFFER_SIZE);
 		if (n == -1)
-			return (free(buf), free(stash), NULL);
+		{
+			free(buf);
+			free(stash);
+			return(NULL);
+		}
 		buf[n] = '\0';
 		stash = ft_strjoin(stash, buf);
 	}
