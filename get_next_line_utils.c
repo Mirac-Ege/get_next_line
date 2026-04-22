@@ -6,12 +6,11 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:34 by mkotan            #+#    #+#             */
-/*   Updated: 2026/04/21 19:29:24 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/22 14:47:10 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stddef.h>
 #include <stdlib.h>
 
 size_t	ft_strlen(const char *str)

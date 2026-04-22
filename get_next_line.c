@@ -6,13 +6,12 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:21 by mkotan            #+#    #+#             */
-/*   Updated: 2026/04/21 19:29:11 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/22 14:47:16 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdlib.h>
-#include <unistd.h>
 
 static char	*read_to_stash(int fd, char *stash)
 {

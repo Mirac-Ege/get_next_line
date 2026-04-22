@@ -6,14 +6,13 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:50 by mkotan            #+#    #+#             */
-/*   Updated: 2026/03/07 00:03:58 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/22 14:46:57 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdlib.h>
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
