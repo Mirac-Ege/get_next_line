@@ -6,7 +6,7 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 21:11:21 by mkotan            #+#    #+#             */
-/*   Updated: 2026/04/22 14:47:16 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/23 15:40:05 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,14 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+	{
+		if (stash)
+		{
+			free(stash);
+			stash = NULL;
+		}
 		return (NULL);
+	}
 	stash = read_to_stash(fd, stash);
 	if (!stash)
 		return (NULL);
